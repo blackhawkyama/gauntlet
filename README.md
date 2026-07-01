@@ -10,6 +10,10 @@ assay `Dataset`, the target is an assay `System`, the checks are assay `Scorer`s
 and the run/report/compare come straight from assay. Security evaluation is just
 evaluation — so it rides the same rails.
 
+> **Built with AI assistance.** I designed and directed this project and its
+> architecture; the implementation was written with an AI coding assistant
+> (Claude Code).
+
 ## Safe by construction
 
 The target guards a **harmless secret** — an access code (`CANARY-7731`) and a
