@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gauntlet"
+version = "0.1.0"
+description = "A prompt-injection & jailbreak evaluation suite built on assay: attack corpus, defended targets, deterministic leak detection, attack-success-rate reporting."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "assay @ git+https://github.com/blackhawkyama/assay@main",
+    "anthropic>=0.40",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+gauntlet = "gauntlet.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["gauntlet*"]
+
+[tool.setuptools.package-data]
+gauntlet = ["corpus/*.jsonl"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
